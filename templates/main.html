@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ab.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/ab.css') }}">
+    
+    <title>SOCIALMEDIA-DASHBOARD</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <i class="menu-btn fas fa-bars"></i>
+            <h2 class="logo"> My Social Tracker</h2>
+        </div>
+        <div class="nav-right">
+            <div class="search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="search....">
+            </div>
+            <div class="notification">
+                <a href="#"><i class="fas fa-bell" style="color: black;"></i></a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="sidebar">
+            <div class="profile">
+                <img src="static/css/images.jpg" alt="profile" class="profile-image">
+                <h3>Mr. Beast</h3>
+                <p>content creator</p>
+            </div>
+            <div class="menu">
+                <div class="menu-detail menu-active">
+                    <a href="#">
+                        <i class="fas fa-chart-pie menu-icon"></i><span>Dashboard</span>
+                    </a>
+                </div>        
+                        
+                <div class="menu-detail">
+                    <a href="https://www.instagram.com/mrbeast/">
+                        <i class="fab fa-instagram social-icon"></i><span>Instagram</span>
+                    </a>
+                </div>        
+                <div class="menu-detail">
+                    <a href="https://www.youtube.com/@MrBeast">
+                        <i class="fab fa-youtube social-icon"></i><span>YouTube</span>
+                    </a>
+                </div>    
+                <div class="menu-detail">
+                    <a href="https://www.facebook.com/MrBeast6000">
+                        <i class="fab fa-facebook-f social-icon"></i><span>Facebook</span>
+
+                    </a>
+                </div>
+                <div class="menu-detail">
+                    <a href="https://twitter.com/MrBeast">
+                        <i class="fab fa-twitter"></i><span>Twitter</span>
+                    </a>
+                    <button class="customize-btn" onclick="openDialog()">Customize Theme</button>
+
+                    <div id="colorDialog" class="color-dialog">
+                        <div class="dialog-content">
+                            <p>Choose the color you want as your theme:</p>
+                            <button class="color-btn pink" onclick="changeTheme('#ff69b4')"></button>
+                            <button class="color-btn blue" onclick="changeTheme('#3498db')"></button>
+                            <button class="color-btn green" onclick="changeTheme('#2ecc71')"></button>
+                            <button class="color-btn purple" onclick="changeTheme('#9b59b6')"></button>
+                            <button class="color-btn yellow" onclick="changeTheme('#f1c40f')"></button>
+                            <button onclick="closeDialog()">Close</button>
+                        </div>
+                    </div>
+                
+                    <script>
+                        function openDialog() {
+                            document.getElementById('colorDialog').style.display = 'flex';
+                        }
+                
+                        function closeDialog() {
+                            document.getElementById('colorDialog').style.display = 'none';
+                        }
+                
+                        function changeTheme(color) {
+                            document.documentElement.style.setProperty('--primary-color', color);
+                            document.body.style.backgroundColor = color;
+                            closeDialog();
+                        }
+                    </script>
+                                
+
+                </div>
+            </div>
+        </div>
+        <div class="main-container">
+            <!-- left -->
+            <div class="left-container">
+                <div class="wrapper">
+                    <div class="card-wrapper">
+                        <div class="card">
+                            <a href="https://www.instagram.com/mrbeast/?hl=en">
+                            <i class="fab fa-instagram social-icon"></i>
+                            </a>
+                            <h1 class="count">42M</h1>
+                            <small>Followers</small>
+                            <div class="Dropdown">
+                                <button class="btn btn-more">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                                <div class="Dropdown-content">
+                                    <a href="#">Details</a>
+                                    <a href="#">Download</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <a href="https://www.youtube.com/channel/UCX6OQ3DkcsbYNE6H8uQQuVA">
+                            <i class="fab fa-youtube social-icon"></i>
+                            </a>
+                            <h1 class="count">194M</h1>
+                            <small>Subscribers</small>
+                            <div class="Dropdown">
+                                <button class="btn btn-more">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                                <div class="Dropdown-content">
+                                    <a href="#">Details</a>
+                                    <a href="#">Download</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-wrapper">
+                        <div class="card">
+                            <a href="https://www.facebook.com/MrBeast6000/">
+                            <i class="fab fa-facebook-f social-icon"></i>
+                            </a>
+                            <h1 class="count">15M</h1>
+                            <small>Followers</small>
+                            <div class="Dropdown">
+                                <button class="btn btn-more">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                                <div class="Dropdown-content">
+                                    <a href="#">Details</a>
+                                    <a href="#">Download</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <a href="https://twitter.com/MrBeast?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
+                            <i class="fab fa-twitter social-icon"></i>
+                            </a>
+                            <h1 class="count">24.2M</h1>
+                            <small>Followers</small>
+                            <div class="Dropdown">
+                                <button class="btn btn-more">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                                <div class="Dropdown-content">
+                                    <a href="#">Details</a>
+                                    <a href="#">Download</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="wrapper">
+                    <div class="card">
+                        <div class="title-wrapper">
+                            <h2 class="title">Trend Data</h2>
+                            <div class="filter">
+                                <a class="active" href="#">Day</a>
+                                <a href="# ">Week</a>
+                                <a href="#">Month</a> 
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <div id="chLine"></div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- right -->
+            <div class="right-container">
+                <div class="card">
+                    <h2 class="title">Summary</h2>
+                    <div id="dougnut-chart"></div>
+
+                    <div class="chart-detail">
+                        <div class="detail-wrapper">
+                            <i class="fas fa-theater-masks"></i>
+                            <h3>Impression</h3>
+                            <h3 class="detail-num">42M<span class="up-down green">+64%</span></h3>
+                        </div>
+                        <hr class="divider">
+                        <div class="detail-wrapper">
+                            <i class="fas fa-user-friends"></i>
+                            <h3>Followers</h3>
+                            <h3 class="detail-num">15.9K<span class="up-down green">+29%%</span></h3>
+                        </div>
+                        <hr class="divider">
+                        <div class="detail-wrapper">
+                            <i class="fas fa-shapes"></i>
+                            <h3>Engagement</h3>
+                            <h3 class="detail-num">34.5K<span class="up-down red">-14%</span></h3>
+                        </div>
+                        <hr class="divider">
+                        <div class="detail-wrapper">
+                            <i class="fas fa-shapes"></i>
+                            
+                            <h3>Likes</h3>
+                            <h3 class="detail-num">235KK<span class="up-down green">+14%</span></h3>
+                        </div>
+                        <hr class="divider">
+                    </div>
+                
+                    
+                </div>
+            </div>
+            <div class="bottom-container">
+                <div class="card">
+                    <h2 class="tittle">Recent Upload</h2>
+                    <div class="table-wrapper">
+                        <table class="table">
+                            <tr>
+                              <th>Thumbnail & Description</th>
+                              <th>Dates</th>
+                              <th>View</th>
+                              <th>Comment</th>
+                              <th>Likes</th>
+                              <th>More</th>
+                            </tr>
+                            <tr>
+                                <td class="table-title">
+                                    <img class="table-image" src="https://github.com/prashant22r/my-social-media-dashboard/blob/main/feature-image-startuptalky-12.jpg?raw=true">
+                                    <h3>I Built 100 Wells in Africa </h3> 
+                                </td>
+                                <td>NOV 5,2023</td>
+                                <td>107 M</td>
+                                <td>193k</td>
+                                <td>8.1 M</td>
+
+                                <td>
+                                    <a href="https://www.youtube.com/watch?v=QjvpjXdgugA&ab_channel=MrBeast" class="btn btn-table" target="_blank">Details</a>
+                                </td>
+                            
+                            </tr>  
+                            <tr>
+                                <td class="table-title">
+                                    <img class="table-image" src="https://images.ladbible.com/resize?type=webp&quality=70&width=648&fit=contain&gravity=null&url=https://images.ladbiblegroup.com/v3/assets/blt949ea8e16e463049/blt007c4e8ca7841125/65536c4c99c2b5040a14c17a/Screenshot_2023-11-14_at_12.46.02.png">
+                                    <h3>World's Deadliest Laser Maze </h3> 
+                                </td>
+                                <td>NOV 3,2023</td>
+                                <td>102M</td>
+                                <td>83k</td>
+                                <td>3.6M</td>
+                            
+                                <td>
+                                    <a href="https://www.youtube.com/watch?v=QjvpjXdgugA&ab_channel=MrBeast" class="btn btn-table" target="_blank">Details</a>
+                                </td>
+                                
+                            
+                            </tr>  
+                            <tr>
+                                <td class="table-title">
+                                    <img class="table-image" src="https://github.com/prashant22r/my-social-media-dashboard/blob/main/mr-beast-in-india-people-request-photo-with-youtuber-.jpg?raw=true">
+                                    <h3>Your only Mr.Beast </h3> 
+                                </td>
+                                <td>NOV 01,2023</td>
+                                <td>102M</td>
+                                <td>79k</td>
+                                <td>4.5M</td>
+                            
+                                <td>
+                                    <a href="your" class="btn btn-table" target="_blank">Details</a>
+                                </td>
+                                
+                            
+                            </tr>  
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="final.js"></script>
+<script src="{{url_for('static', filename='css/final.js')}}"></script>
+</html>
